@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join HANZZ Comunity 🎬✨</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #0b0914;
+            color: #eceaff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 80% 20%, rgba(255, 0, 128, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(0, 191, 255, 0.15) 0%, transparent 50%),
+                linear-gradient(135deg, #0f0c20 0%, #060409 100%);
+        }
+
+        .form-container {
+            position: relative;
+            z-index: 10;
+            background: rgba(20, 18, 38, 0.85);
+            border: 3px solid #ff007f;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 480px;
+            width: 100%;
+            box-shadow: 0 0 30px rgba(255, 0, 127, 0.4);
+            backdrop-filter: blur(12px);
+        }
+
+        h2 {
+            color: #00f0ff;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 1.8rem;
+            text-shadow: 0 0 12px rgba(0, 240, 255, 0.6);
+            font-weight: 900;
+        }
+        
+        .welcome-msg {
+            background-color: rgba(255, 0, 127, 0.1);
+            border: 1px solid rgba(255, 0, 127, 0.3);
+            border-left: 5px solid #ff007f;
+            padding: 15px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 25px;
+            border-radius: 4px 12px 12px 4px;
+            color: #e2dfcc;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ff007f;
+            font-size: 0.95rem;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #3d346d;
+            border-radius: 10px;
+            background-color: rgba(10, 8, 22, 0.9);
+            color: #fff;
+            font-size: 1rem;
+        }
+        
+        .btn-submit {
+            width: 100%;
+            background: linear-gradient(135deg, #ff007f 0%, #7f00ff 100%);
+            color: #ffffff;
+            border: none;
+            padding: 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(255, 0, 127, 0.4);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        /* Tombol khusus setelah kirim data biar gak bentrok */
+        .grup-container {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(0, 240, 255, 0.1);
+            border-radius: 10px;
+            border: 1px dashed #00f0ff;
+        }
+
+        .btn-grup {
+            display: inline-block;
+            width: 100%;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(37, 211, 102, 0.4);
+            animation: berkedip 1.5s infinite;
+        }
+
+        @keyframes berkedip {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>HANZZ COMUNITY</h2>
+        
+        <div class="welcome-msg">
+            🎬✨ <strong>Selamat Datang di HANZZ_komunitas!</strong><br>
+            Halo Member Baru! Biar kita makin akrab di komunitas, silakan isi data perkenalan ini ya:
+        </div>
+        
+        <form id="hanzzForm" onsubmit="prosesPendaftaran(event)">
+            <div class="form-group">
+                <label for="nama">✨ Nama Panggilan:</label>
+                <input type="text" id="nama" required placeholder="Contoh: Kirito, Luffy, Hanz">
+            </div>
+
+            <div class="form-group">
+                <label for="umur">🎂 Umur:</label>
+                <input type="number" id="umur" required placeholder="Masukkan umurmu">
+            </div>
+
+            <div class="form-group">
+                <label for="kota">🗺️ Asal Kota:</label>
+                <input type="text" id="kota" required placeholder="Masukkan kota asalmu">
+            </div>
+
+            <div class="form-group">
+                <label for="hobi">🔮 Hobi / Anime Favorit:</label>
+                <input type="text" id="hobi" required placeholder="Contoh: Main Game / One Piece">
+            </div>
+
+            <div class="form-group">
+                <label for="gender">👤 Jenis Kelamin:</label>
+                <select id="gender" required>
+                    <option value="" disabled selected>Pilih jenis kelamin</option>
+                    <option value="Cowok">Cowok ♂</option>
+                    <option value="Cewek">Cewek ♀</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn-submit">⚡ KIRIM DATA KE WA ADMIN ⚡</button>
+        </form>
+
+        <div id="grupSection" class="grup-container">
+            <p style="color: #00f0ff; font-size: 0.9rem; margin-top: 0;">Langkah Terakhir! Setelah kirim data ke WA, klik tombol di bawah untuk masuk grup:</p>
+            <a href="https://chat.whatsapp.com/FBT3RM6oRub65GGP8zGNBQ" class="btn-grup">🔗 MASUK GRUP WA KOMUNITAS</a>
+        </div>
+    </div>
+
+    <script>
+        function prosesPendaftaran(event) {
+            event.preventDefault();
+
+            const nama = document.getElementById('nama').value;
+            const umur = document.getElementById('umur').value;
+            const kota = document.getElementById('kota').value;
+            const hobi = document.getElementById('hobi').value;
+            const gender = document.getElementById('gender').value;
+
+            const textWA = `Selamat Datang di HANZZ_komunitas! 🎬✨\n` +
+                           `Halo Member Baru! Biar kita makin akrab di komunitas, silakan isi data perkenalan ini ya:\n` +
+                           `📌 *Data Member Baru:*\n\n` +
+                           `• *Nama Panggilan:* ${nama}\n` +
+                           `• *Umur:* ${umur} Tahun\n` +
+                           `• *Asal Kota:* ${kota}\n` +
+                           `• *Hobi/Anime Favorit:* ${hobi}\n` +
+                           `• *Jenis Kelamin:* ${gender}`;
+
+            const encodedText = encodeURIComponent(textWA);
+            const nomorHanz = "6285722567019";
+
+            alert("Terimakasih telah mengisi form! Anda akan diarahkan ke WhatsApp untuk mengirim data pendaftaran.");
+
+            // Membuka pengiriman data ke WA Abang
+            const waUrl = `https://api.whatsapp.com/send?phone=${nomorHanz}&text=${encodedText}`;
+            window.open(waUrl, '_blank');
+
+            // Memunculkan tombol gabung grup komunitas di halaman web agar tidak bentrok
+            document.getElementById('grupSection').style.display = 'block';
+            document.querySelector('.btn-submit').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
